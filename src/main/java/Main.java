@@ -50,7 +50,7 @@ public class Main {
             ContinenteJSON cjson=new ContinenteJSON(c,data);
             continentesJSON.engadeContinente(cjson);
         }
-        File inf = new File("D:\\CURSO\\repositorios\\Ciclo\\ADREC02\\coronavirus.json");
+        File inf = new File("coronavirus.json");
         if (inf.exists()){
             inf.delete();
         }
@@ -70,15 +70,15 @@ public class Main {
         procedadorXML= XMLReaderFactory.createXMLReader();
         PaisesXML paisesXML=new PaisesXML();
         procedadorXML.setContentHandler(paisesXML);
-        InputSource arquivo=new InputSource("D:\\CURSO\\repositorios\\Ciclo\\ADREC02\\src\\main\\resources\\coronavirus.xml");
+        InputSource arquivo=new InputSource("./src/main/resources/coronavirus.xml");
         procedadorXML.parse(arquivo);
         return paisesXML.getContinentes();
     }
 
     private static void exercicio_obrigatorio() {
         long inicio=System.currentTimeMillis();
-        File f = new File("D:\\CURSO\\repositorios\\Ciclo\\ADREC02\\config.json");
-        File inf = new File("D:\\CURSO\\repositorios\\Ciclo\\ADREC02\\informe.json");
+        File f = new File("config.json");
+        File inf = new File("informe.json");
         if (inf.exists()){
             inf.delete();
         }
